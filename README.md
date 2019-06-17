@@ -13,11 +13,9 @@ sample cobol run on docker image.
 
 ```
 mkdir src
-wget https://github.com/n-isaka/OCDocker/blob/master/HELLO.cbl
-mv HELLO.cbl src/
-docker pull norisaka/opensource_cobol
-PWD=`pwd`
-docker run --rm -it -v ${PWD}/src:/oscobol/src:ro --name oscobol norisaka/opensource_cobol
+wget -O src/HELLO.cbl https://raw.githubusercontent.com/opensourcecobol/oc-dockerfile/master/HELLO.cbl
+docker pull opensourcecobol/opensource-cobol
+docker run --rm -it -v `pwd`/src:/oscobol/src:ro --name oscobol opensourcecobol/opensource-cobol
 ```
 
 in docker container
